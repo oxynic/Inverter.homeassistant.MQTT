@@ -1,6 +1,10 @@
 # Inverter.homeassistant.MQTT
 MPP Inverter Homeassistant integration via MQTT
 
+This app has been derived from <a href="https://github.com/ned-kelly/docker-voltronic-homeassistant">ned-kelly/docker-voltronic-homeassistant</a> and <a href="https://github.com/manio/skymax-demo">/manio/skymax-demo</a>
+
+Its a small windows console app that will read the inverter status via serial cable connected to COM port. It will pass the data to an MQTT broker and can then be used to dispaly data on homeassistant.
+
 To run this app download all files from <a href="https://github.com/oxynic/Inverter.homeassistant.MQTT/tree/master/bin/Debug">Inverter.homeassistant.MQTT<b>/bin/Debug/</b></a>.
 
 Open file Inverter.homeassistant.MQTT.exe.config and update the settings is this xml file (details below)
