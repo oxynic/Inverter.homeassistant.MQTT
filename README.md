@@ -20,5 +20,5 @@ Open file Inverter.homeassistant.MQTT.exe.config and update the settings is this
 
 Run the <b>Inverter.homeassistant.MQTT.exe</b> file to run this app.
 
-check log file and status.html (created by this app on the same folder). If you have any issues with this app please share content from this file.
+check log file and status.html (created when you run this app and saved on the same folder). If you have any issues with this app please share content from this file.
 
