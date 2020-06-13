@@ -14,7 +14,7 @@ namespace Inverter.homeassistant.MQTT
     {
         // App settings
         public static bool isDebug = Convert.ToBoolean(ConfigurationManager.AppSettings["DebugFlag"].ToString());
-        public static int scanTime = Convert.ToInt32(ConfigurationManager.AppSettings["scanTime"].ToString());
+        public static int scanTime = Convert.ToInt32(ConfigurationManager.AppSettings["ScanDelay"].ToString());
 
         public static class Inverter
         {
