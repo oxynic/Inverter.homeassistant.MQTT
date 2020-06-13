@@ -1,7 +1,7 @@
 # Inverter.homeassistant.MQTT
 MPP Inverter Homeassistant integration via MQTT
 
-To run this app go to Inverter.homeassistant.MQTT/bin/Debug/ and download all the files.
+To run this app download all files from <a href="https://github.com/oxynic/Inverter.homeassistant.MQTT/tree/master/bin/Debug">Inverter.homeassistant.MQTT<b>/bin/Debug/</b></a>.
 
 Open file Inverter.homeassistant.MQTT.exe.config and update the settings is this xml file (details below)
 
