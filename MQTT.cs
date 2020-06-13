@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
@@ -34,8 +34,8 @@ namespace Inverter.homeassistant.MQTT
                     Credentials = new RandomPassword(),
                     ChannelOptions = new MqttClientTcpOptions
                     {
-                        Server = Settings.MQTT.Server, 
-                        Port = Settings.MQTT.Port 
+                        Server = Settings.MQTT.Server,
+                        Port = Settings.MQTT.Port
                     }
                 },
 
@@ -115,7 +115,7 @@ namespace Inverter.homeassistant.MQTT
             {
                 if (managedClient.IsConnected)
                 {
-                    await managedClient.PublishAsync(builder => builder.WithTopic("homeassistant/sensor/" + Settings.MQTT.MQTTClientId + "_inverter_mode").WithPayload(InverterData.Mode)); 
+                    await managedClient.PublishAsync(builder => builder.WithTopic("homeassistant/sensor/" + Settings.MQTT.MQTTClientId + "_inverter_mode").WithPayload(InverterData.Mode));
                     await managedClient.PublishAsync(builder => builder.WithTopic("homeassistant/sensor/" + Settings.MQTT.MQTTClientId + "_ac_grid_voltage").WithPayload(InverterData.QPIGS.voltage_grid.ToString()));
                     await managedClient.PublishAsync(builder => builder.WithTopic("homeassistant/sensor/" + Settings.MQTT.MQTTClientId + "_ac_grid_frequency").WithPayload(InverterData.QPIGS.freq_grid.ToString()));
                     await managedClient.PublishAsync(builder => builder.WithTopic("homeassistant/sensor/" + Settings.MQTT.MQTTClientId + "_ac_out_voltage").WithPayload(InverterData.QPIGS.voltage_out.ToString()));
@@ -158,7 +158,7 @@ namespace Inverter.homeassistant.MQTT
                     await managedClient.PublishAsync(builder => builder.WithTopic("homeassistant/sensor/" + Settings.MQTT.MQTTClientId + "_battery_redischarge_voltage").WithPayload(InverterData.QPIRI.batt_redischarge_voltage.ToString()));
                     await managedClient.PublishAsync(builder => builder.WithTopic("homeassistant/sensor/" + Settings.MQTT.MQTTClientId + "_warnings").WithPayload("NA"));//need to fix
                 }
-                else 
+                else
                 {
                     Task.Run(() => ManagedClientTest.RunAsync("config"));
                 }
@@ -171,8 +171,8 @@ namespace Inverter.homeassistant.MQTT
 
         public class RandomPassword : IMqttClientCredentials
         {
-            public byte[] Password => System.Text.Encoding.ASCII.GetBytes(Settings.MQTT.Password);  
-            public string Username => Settings.MQTT.Username; 
+            public byte[] Password => System.Text.Encoding.ASCII.GetBytes(Settings.MQTT.Password);
+            public string Username => Settings.MQTT.Username;
         }
 
         public class ClientRetainedMessageHandler : IManagedMqttClientStorage
